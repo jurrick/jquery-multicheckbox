@@ -6,7 +6,7 @@
         "select",
         "checkbox"
     ],
-    "version": "0.0.6",
+    "version": "0.0.7",
     "author": {
         "name": "Yury Snegirev"
     },
@@ -17,7 +17,7 @@
         }
     ],
     "bugs": "https://github.com/jurrick/jquery-multicheck/issues",
-    "homepage": "https://github.com/jquery/jquery-multicheck",
+    "homepage": "https://github.com/jurrick/jquery-multicheck",
     "dependencies": {
         "jquery": ">=1.5"
     }

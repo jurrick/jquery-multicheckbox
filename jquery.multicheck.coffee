@@ -1,5 +1,5 @@
 ###
- * jQuery Multicheck Plugin v.0.5
+ * jQuery Multicheck Plugin v0.0.7
  * https://github.com/jurrick/jquery-multicheck
  *
  * Copyright 2014 Yury Snegirev
