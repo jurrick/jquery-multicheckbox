@@ -1,0 +1,24 @@
+{
+    "name": "multicheck",
+    "title": "MultiCheck",
+    "description": "jQuery plugin for convert multiple select to set of checkboxes.",
+    "keywords": [
+        "select",
+        "checkbox"
+    ],
+    "version": "0.1",
+    "author": {
+        "name": "Yury Snegirev"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jurrick/jquery-multicheck/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/jurrick/jquery-multicheck/issues",
+    "homepage": "https://github.com/jurrick/jquery-multicheck",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
