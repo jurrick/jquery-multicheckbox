@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/idea.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/jquery.multicheck.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -17,7 +18,8 @@
     <script type="text/javascript">
     $(function() {
         $('#example1').multicheck();
-        $('#example2, #example3').multicheck({label_wrap: '<div class="checkbox"></div>'});
+        $('#example2').multicheck({scroll_wrapper_enabled: true});
+        $('#example3, #example4').multicheck({label_wrap: '<div class="checkbox"></div>'});
     });
     </script>
 
@@ -56,6 +58,33 @@
           </select>
         </div>
       </div>
+      <h3>Wrap checkboxes with scrolling</h3>
+      <div class="row">
+        <div class="col-md-9">
+          <h4>HTML</h4>
+          <pre><code>&lt;select multiple="multiple"&gt;
+  &lt;option value="red"&gt;Red&lt;/option&gt;
+  &lt;option value="green"&gt;Green&lt;/option&gt;
+  &lt;option value="blue"&gt;Blue&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          <h4>JavaScript</h4>
+          <pre><code>$('select').multicheck({scroll_wrapper_enabled: true});</code></pre>
+        </div>
+        <div class="col-md-3">
+          <h4>Convert from</h4>
+          <select multiple="multiple">
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+          </select>
+          <h4>to</h4>
+          <select name="color" id="example2" multiple="multiple">
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+          </select>
+        </div>
+      </div>
       <h3>Bootstrap style</h3>
       <div class="row">
         <div class="col-md-9">
@@ -78,7 +107,7 @@
               <option value="green">Green</option>
           </select>
           <h4>to</h4>
-          <select name="color" id="example2" multiple="multiple">
+          <select name="color" id="example3" multiple="multiple">
               <option value="red">Red</option>
               <option value="blue">Blue</option>
               <option value="green">Green</option>
@@ -107,7 +136,7 @@
               <option data-label-class="label label-success" value="green">Green</option>
           </select>
           <h4>to</h4>
-          <select name="color" id="example3" multiple="multiple">
+          <select name="color" id="example4" multiple="multiple">
               <option data-label-class="label label-danger" value="red">Red</option>
               <option data-label-class="label label-primary" value="blue">Blue</option>
               <option data-label-class="label label-success" value="green">Green</option>
