@@ -1,17 +1,20 @@
 ###
- * jQuery Multicheck Plugin v0.0.7
+ * jQuery Multicheck Plugin v0.1
  * https://github.com/jurrick/jquery-multicheck
  *
  * Copyright 2014 Yury Snegirev
  * Released under the MIT license
 ###
 
-"use strict"
-
 (($) ->
+
+  'use strict'
+
   class MultiCheck
     DEFAULTS = {
-      label_wrap: ''
+      label_wrap: '',
+      scroll_wrapper_enabled: no,
+      selected_element: 'label'
     }
 
     constructor: (element, options) ->
@@ -35,7 +38,7 @@
         checkboxes += checkbox
 
       $container = $("""
-        <div class="multicheck-container">
+        <div class="multicheck-container#{' multicheck-wrap-container' if @options['scroll_wrapper_enabled']}">
           #{checkboxes}
         </div>
         """)
@@ -47,6 +50,11 @@
         $ch = $(e.target)
         $option = @$select.children("[value=\"#{$ch.val()}\"]")
         $option.prop(selected: $ch.is(':checked'))
+        if @options['scroll_wrapper_enabled'] == yes
+          if $ch.is(':checked')
+            $ch.closest(@options['selected_element']).addClass('multicheck-on')
+          else
+            $ch.closest(@options['selected_element']).removeClass('multicheck-on')
 
     getOptions: (options) =>
       $.extend({}, DEFAULTS, options)
@@ -54,7 +62,5 @@
   jQuery.fn.multicheck = (options = null) ->
     @each ->
       new MultiCheck(this, options)
-
-  $.fn.multicheck.Constructor = MultiCheck
 
 ) jQuery
