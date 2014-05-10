@@ -11,11 +11,13 @@
   'use strict'
 
   class MultiCheck
-    DEFAULTS = {
+    DEFAULTS =
+      # Wrap each label in HTML structure. Example for Bootstrap: '<div class="checkbox"></div>'
       label_wrap: '',
+      # Container with scrolling and borders
       scroll_wrapper_enabled: no,
+      # if scroll_wrapper_enabled is true then selected_element is active element with class multicheck-on.
       selected_element: 'label'
-    }
 
     constructor: (element, options) ->
       @$select = $(element)
