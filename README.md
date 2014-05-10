@@ -1,12 +1,12 @@
-# jQuery MultiCheck
+# jQuery MultiCheckbox
 
 ## Installation
 
 Include script *after* the jQuery library:
 
 ```html
-<link rel="stylesheet" href="jquery.multicheck.css" />
-<script src="/path/to/jquery.multicheck.js"></script>
+<link rel="stylesheet" href="jquery.multicheckbox.css" />
+<script src="/path/to/jquery.multicheckbox.js"></script>
 ```
 
 ## Options
@@ -19,7 +19,7 @@ DEFAULTS = {
   label_wrap: '',
   // Container with scrolling and borders
   scroll_wrapper_enabled: false,
-  // if scroll_wrapper_enabled is true then selected_element is active element with class multicheck-on.
+  // if scroll_wrapper_enabled is true then selected_element is active element with class multicheckbox-on.
   selected_element: 'label'
 };
 ```

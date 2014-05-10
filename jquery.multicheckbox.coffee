@@ -1,6 +1,6 @@
 ###
- * jQuery Multicheck Plugin v0.1.0
- * https://github.com/jurrick/jquery-multicheck
+ * jQuery MultiCheckbox Plugin v0.1.0
+ * https://github.com/jurrick/jquery-multicheckbox
  *
  * Copyright 2014 Yury Snegirev
  * Released under the MIT license
@@ -10,13 +10,13 @@
 
   'use strict'
 
-  class MultiCheck
+  class MultiCheckbox
     DEFAULTS =
       # Wrap each label in HTML structure. Example for Bootstrap: '<div class="checkbox"></div>'
       label_wrap: '',
       # Container with scrolling and borders
       scroll_wrapper_enabled: no,
-      # if scroll_wrapper_enabled is true then selected_element is active element with class multicheck-on.
+      # if scroll_wrapper_enabled is true then selected_element is active element with class multicheckbox-on.
       selected_element: 'label'
 
     constructor: (element, options) ->
@@ -40,7 +40,7 @@
         checkboxes += checkbox
 
       $container = $("""
-        <div class="multicheck-container#{' multicheck-wrap-container' if @options['scroll_wrapper_enabled']}">
+        <div class="multicheckbox-container#{' multicheckbox-wrap-container' if @options['scroll_wrapper_enabled']}">
           #{checkboxes}
         </div>
         """)
@@ -54,15 +54,15 @@
         $option.prop(selected: $ch.is(':checked'))
         if @options['scroll_wrapper_enabled'] == yes
           if $ch.is(':checked')
-            $ch.closest(@options['selected_element']).addClass('multicheck-on')
+            $ch.closest(@options['selected_element']).addClass('multicheckbox-on')
           else
-            $ch.closest(@options['selected_element']).removeClass('multicheck-on')
+            $ch.closest(@options['selected_element']).removeClass('multicheckbox-on')
 
     getOptions: (options) =>
       $.extend({}, DEFAULTS, options)
 
-  jQuery.fn.multicheck = (options = null) ->
+  jQuery.fn.multicheckbox = (options = null) ->
     @each ->
-      new MultiCheck(this, options)
+      new MultiCheckbox(this, options)
 
 ) jQuery
