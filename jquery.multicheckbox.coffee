@@ -1,5 +1,5 @@
 ###
- * jQuery MultiCheckbox Plugin v0.1.0
+ * jQuery MultiCheckbox Plugin v1.0.0
  * https://github.com/jurrick/jquery-multicheckbox
  *
  * Copyright 2014 Yury Snegirev
