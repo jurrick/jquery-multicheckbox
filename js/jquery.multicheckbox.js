@@ -1,7 +1,7 @@
 
 /*
- * jQuery Multicheck Plugin v0.1
- * https://github.com/jurrick/jquery-multicheck
+ * jQuery MultiCheckbox Plugin v1.0.0
+ * https://github.com/jurrick/jquery-multicheckbox
  *
  * Copyright 2014 Yury Snegirev
  * Released under the MIT license
@@ -12,8 +12,8 @@
 
   (function($) {
     'use strict';
-    var MultiCheck;
-    MultiCheck = (function() {
+    var MultiCheckbox;
+    MultiCheckbox = (function() {
       var DEFAULTS;
 
       DEFAULTS = {
@@ -22,14 +22,14 @@
         selected_element: 'label'
       };
 
-      function MultiCheck(element, options) {
+      function MultiCheckbox(element, options) {
         this.getOptions = __bind(this.getOptions, this);
         this.$select = $(element);
         this.options = this.getOptions(options);
         this.init();
       }
 
-      MultiCheck.prototype.init = function() {
+      MultiCheckbox.prototype.init = function() {
         var $container, checkboxes;
         this.$select.hide();
         checkboxes = '';
@@ -43,7 +43,7 @@
           checkbox = "<label" + label_class + ">\n  <input type=\"checkbox\" value=\"" + ($option.val()) + "\" /> " + ($option.text()) + "\n</label>";
           return checkboxes += checkbox;
         });
-        $container = $("<div class=\"multicheck-container" + (this.options['scroll_wrapper_enabled'] ? ' multicheck-wrap-container' : void 0) + "\">\n  " + checkboxes + "\n</div>");
+        $container = $("<div class=\"multicheckbox-container" + (this.options['scroll_wrapper_enabled'] ? ' multicheckbox-wrap-container' : void 0) + "\">\n  " + checkboxes + "\n</div>");
         $container = $container.insertAfter(this.$select);
         if (!!this.options['label_wrap']) {
           $container.children('label').wrap(this.options['label_wrap']);
@@ -58,28 +58,28 @@
             });
             if (_this.options['scroll_wrapper_enabled'] === true) {
               if ($ch.is(':checked')) {
-                return $ch.closest(_this.options['selected_element']).addClass('multicheck-on');
+                return $ch.closest(_this.options['selected_element']).addClass('multicheckbox-on');
               } else {
-                return $ch.closest(_this.options['selected_element']).removeClass('multicheck-on');
+                return $ch.closest(_this.options['selected_element']).removeClass('multicheckbox-on');
               }
             }
           };
         })(this));
       };
 
-      MultiCheck.prototype.getOptions = function(options) {
+      MultiCheckbox.prototype.getOptions = function(options) {
         return $.extend({}, DEFAULTS, options);
       };
 
-      return MultiCheck;
+      return MultiCheckbox;
 
     })();
-    return jQuery.fn.multicheck = function(options) {
+    return jQuery.fn.multicheckbox = function(options) {
       if (options == null) {
         options = null;
       }
       return this.each(function() {
-        return new MultiCheck(this, options);
+        return new MultiCheckbox(this, options);
       });
     };
   })(jQuery);
