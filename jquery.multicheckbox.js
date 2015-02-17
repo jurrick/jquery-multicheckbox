@@ -40,7 +40,7 @@
           if ($option.data('label-class') != null) {
             label_class = " class=\"" + ($option.data('label-class')) + "\"";
           }
-          checkbox = "<label" + label_class + ">\n  <input type=\"checkbox\" value=\"" + ($option.val()) + "\" /> " + ($option.text()) + "\n</label>";
+          checkbox = "<label" + label_class + ">\n  <input type=\"checkbox\" value=\"" + ($option.val()) + "\"" + ($option.is(':selected') ? 'checked' : '') + " /> " + ($option.text()) + "\n</label>";
           return checkboxes += checkbox;
         });
         $container = $("<div class=\"multicheckbox-container" + (this.options['scroll_wrapper_enabled'] ? ' multicheckbox-wrap-container' : void 0) + "\">\n  " + checkboxes + "\n</div>");
